@@ -1,5 +1,4 @@
 /* トップページのCSS */
-
 /* ページヘッダー */
 .page-header {
   background-color: blueviolet;
@@ -58,6 +57,23 @@
   margin-top: 0;
 }
 
+@media screen and (min-width: 768px) {
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* 20pxの余白を除いて2等分 */
+  .card-list__item {
+    width: calc((100% - 20px) / 2);
+  }
+  /* 2個目の.card-list__itemまで */
+  .card-list__item:nth-child(-n + 2) {
+    margin-top: 0;
+  }
+}
+
 .card__title {
   margin-top: 10px;
   font-size: 24px;
@@ -71,7 +87,6 @@
 .card__meta {
   margin-top: 10px;
   display: flex;
-  align-items: baseline;
 }
 
 .card__meta-item {
@@ -82,20 +97,4 @@
 
 .card__meta-item:first-child {
   margin-left: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .card-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .card-list__item {
-    width: calc((100% - 20px) / 2);
-  }
-
-  .card-list__item:nth-child(-n + 2) {
-    margin-top: 0;
-  }
 }
